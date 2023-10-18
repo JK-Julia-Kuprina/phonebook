@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Company {
 
-    private Random random = new Random();
+    private Random random;
 
     private String nameCompany;
 
@@ -14,10 +14,13 @@ public class Company {
 
 
 
+
+
     public Company(String nameCompany, Publisher jobAgency, int maxSalary) {
         this.nameCompany = nameCompany;
         this.maxSalary = maxSalary;
         this.jobAgency = jobAgency;
+        random = new Random();
     }
 
 
@@ -25,19 +28,21 @@ public class Company {
         int salary = 0;
         switch (type) {
             case Student:
-                salary = random.nextInt(2000, maxSalary);
+                salary = random.nextInt(3000, maxSalary);
                 break;
             case Master:
-                salary = random.nextInt(60000, maxSalary);
+                salary = random.nextInt(40000, maxSalary);
                 break;
             case TeamLead:
-                salary = random.nextInt(150000, maxSalary);
+                salary = random.nextInt(70000, maxSalary);
                 break;
             default:
                 break;
         }
-        Vacancy vacancy = new Vacancy(type, nameCompany, salary);
-        jobAgency.sendOffer(vacancy);
+
+                Vacancy vacancy = new Vacancy(type, nameCompany, salary);
+                jobAgency.sendOffer(vacancy);
     }
+
 
 }

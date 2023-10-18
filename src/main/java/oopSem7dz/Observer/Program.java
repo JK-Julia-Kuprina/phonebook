@@ -38,5 +38,11 @@ public class Program {
             geekBrains.needEmployee(Vacancy.Type.Student);
         }
 
+        System.out.println("\n\nВсе активные вакансии:");
+        jobAgency.allActiveVacancies();
+
+        System.out.println("Все соискатели:");
+        jobAgency.allObservers();
+
     }
 }
