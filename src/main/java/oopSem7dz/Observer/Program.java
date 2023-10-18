@@ -13,6 +13,7 @@ public class Program {
 
     public static void main(String[] args) {
 
+
         Publisher jobAgency = new JobAgency();
         Company google = new Company("Google", jobAgency, 120000);
         Company yandex = new Company("Yandex", jobAgency, 95000);
@@ -31,18 +32,16 @@ public class Program {
         jobAgency.registerObserver(student2);
 
         System.out.println("Вакансии готовы к рассылке:");
+        System.out.println("Все соискатели:");
+        jobAgency.allObservers();
+        System.out.println("\n\nВсе активные вакансии:");
+        jobAgency.allActiveVacancies();
 
         for (int i = 0; i < 5; i++){
             google.needEmployee(Vacancy.Type.TeamLead);
             yandex.needEmployee(Vacancy.Type.Master);
             geekBrains.needEmployee(Vacancy.Type.Student);
         }
-
-        System.out.println("\n\nВсе активные вакансии:");
-        jobAgency.allActiveVacancies();
-
-        System.out.println("Все соискатели:");
-        jobAgency.allObservers();
 
     }
 }
