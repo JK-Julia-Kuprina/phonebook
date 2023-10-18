@@ -25,13 +25,13 @@ public class Company {
         int salary = 0;
         switch (type) {
             case Student:
-                salary = random.nextInt(3000, maxSalary);
+                salary = random.nextInt(2000, maxSalary);
                 break;
             case Master:
-                salary = random.nextInt(40000, maxSalary);
+                salary = random.nextInt(60000, maxSalary);
                 break;
             case TeamLead:
-                salary = random.nextInt(70000, maxSalary);
+                salary = random.nextInt(150000, maxSalary);
                 break;
             default:
                 break;
